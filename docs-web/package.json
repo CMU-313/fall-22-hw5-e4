@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "flow-bin": "^0.193.0"
+  },
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  }
+}
