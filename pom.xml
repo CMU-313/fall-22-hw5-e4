@@ -63,6 +63,19 @@
     <org.apache.maven.plugins.maven-surefire-plugin.version>3.0.0-M5</org.apache.maven.plugins.maven-surefire-plugin.version>
     <org.eclipse.jetty.jetty-maven-plugin.version>9.4.36.v20210114</org.eclipse.jetty.jetty-maven-plugin.version>
   </properties>
+
+  <reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+            </configuration>
+        </plugin>
+    </plugins>
+  </reporting>
   
   <scm>
     <connection>scm:git:https://github.com/sismics/docs.git</connection>
