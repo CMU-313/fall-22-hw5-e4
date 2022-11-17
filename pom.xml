@@ -137,27 +137,37 @@
               <goal>report</goal>
             </goals>
           </execution>
-          <execution>
+          <!-- <execution>
             <id>check</id>
             <phase>test</phase>
             <goals>
               <goal>check</goal>
             </goals>
-          </execution>
+          </execution> -->
         </executions>
       </plugin>
-      <plugin>
+      <!-- <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.7.2.1</version>
         <dependencies>
-          <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
-          <dependency>
+          <!- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+          <!-- <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
             <version>4.7.3</version>
           </dependency>
-        </dependencies>
+        </dependencies> -->
+      <!-- </plugin> -->
+
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.0.0</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <failOnError>false</failOnError>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -544,10 +554,16 @@
         <version>${com.levigo.jbig2.levigo-jbig2-imageio.version}</version>
       </dependency>
 
+      <!-- <dependency>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.0-RC6</version>
+      </dependency> -->
+
     </dependencies>
   </dependencyManagement>
 
-   <reporting>
+   <!-- <reporting>
     <plugins>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
@@ -555,6 +571,6 @@
         <version>4.0.4</version>
       </plugin>
     </plugins>
-  </reporting>
+  </reporting> -->
   
 </project>
