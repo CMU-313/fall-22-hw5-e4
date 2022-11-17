@@ -22,7 +22,7 @@ jobs:
       - name: Install test dependencies
         run: sudo apt-get -y -q --no-install-recommends install ffmpeg mediainfo tesseract-ocr tesseract-ocr-deu
       - name: Build with Maven
-        run: mvn -B clean test
+        run: mvn -DskipTests=true clean install
 
       - name: Generate JaCoCo Badge
         id: jacoco
@@ -60,7 +60,8 @@ jobs:
           branch: badges
           force: true
 
-      - name: Push SpotBugs report
-        uses: jwgmeligmeyling/spotbugs-github-action@v1.2
-        with:
-          path: '**/spotbugsXml.xml'
+      - name: SpotBugs report
+        run: mvn com.github.spotbugs:spotbugs-maven-plugin:4.0.0:gui 
+#         uses: jwgmeligmeyling/spotbugs-github-action@v1.2
+#         with:
+#           path: '**/spotbugsXml.xml'
