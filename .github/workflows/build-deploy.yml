@@ -60,6 +60,9 @@ jobs:
           branch: badges
           force: true
 
+      - name: Push SpotBugs report
+        uses: jwgmeligmeyling/spotbugs-github-action@v1.2
+
 
 
      
