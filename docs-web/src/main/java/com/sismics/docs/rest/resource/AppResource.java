@@ -95,6 +95,8 @@ public class AppResource extends BaseResource {
             globalQuota = Long.valueOf(globalQuotaStr);
         }
 
+        //HGelloonkjsa neiw
+
         JsonObjectBuilder response = Json.createObjectBuilder()
                 .add("current_version", currentVersion.replace("-SNAPSHOT", ""))
                 .add("min_version", minVersion)
